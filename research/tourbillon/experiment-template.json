@@ -1,0 +1,33 @@
+{
+  "experiment_id": "TXX-0001",
+  "topology": "classical-tourbillon",
+  "status": "simulation-only",
+  "geometry": {
+    "axes": [
+      {"id": "A1", "tilt_deg": 0.0, "period_s": 60.0}
+    ],
+    "cage_mass_g": null,
+    "cage_inertia_g_mm2": null
+  },
+  "oscillator": {
+    "frequency_hz": null,
+    "balance_inertia_mg_cm2": null,
+    "target_amplitude_deg": null
+  },
+  "energy": {
+    "input_torque_uNm": null,
+    "estimated_cage_loss_uW": null,
+    "constant_force": false
+  },
+  "chronometry": {
+    "positions": ["dial_up", "dial_down", "crown_up", "crown_down", "crown_left", "crown_right"],
+    "rate_s_per_day": {},
+    "amplitude_deg": {}
+  },
+  "manufacturing": {
+    "prototype_scale": 1.0,
+    "process": "unassigned",
+    "inspection_required": true
+  },
+  "notes": []
+}
