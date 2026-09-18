@@ -1,0 +1,26 @@
+{
+  "id": "h2-reference-spiral-001",
+  "status": "geometry-only",
+  "geometry": {
+    "kind": "archimedean-centerline",
+    "inner_radius_mm": 1.0,
+    "radial_pitch_mm_per_turn": 0.30,
+    "turns": 8.0,
+    "samples_per_turn": 256,
+    "spring_width_mm": 0.10,
+    "spring_thickness_mm": null
+  },
+  "observables": [
+    "outer_radius_mm",
+    "active_length_mm",
+    "edge_gap_mm",
+    "centerline_centroid_mm"
+  ],
+  "exports": [
+    "DXF centerline"
+  ],
+  "notes": [
+    "This is a deterministic geometry fixture, not a production hairspring.",
+    "Material, terminal curve, collet/stud geometry and thickness remain unspecified."
+  ]
+}
