@@ -28,6 +28,7 @@ class ResolvedDisplay:
     target_ratio:float
     resolved_ratio:float
     ratio_error:float
+    period_error_s_per_cycle:float
     stages:list[dict]
     kind:str|None=None
     radius_mm:float|None=None
@@ -78,6 +79,9 @@ def _resolve_graph(displays:list[dict])->list[ResolvedDisplay]:
                 raise ValueError(f"{display_id}: invalid period ratio")
 
             stages,actual=solve_two_stage_ratio(target)
+            ratio_error=actual-target
+            period_error=source_period*ratio_error
+
             resolved.append(
                 ResolvedDisplay(
                     id=display_id,
@@ -86,7 +90,8 @@ def _resolve_graph(displays:list[dict])->list[ResolvedDisplay]:
                     period_s=period,
                     target_ratio=target,
                     resolved_ratio=actual,
-                    ratio_error=actual-target,
+                    ratio_error=ratio_error,
+                    period_error_s_per_cycle=period_error,
                     stages=[
                         {"driver":s.driver,"driven":s.driven}
                         for s in stages
@@ -126,9 +131,17 @@ def compile_movement(spec:dict)->ResolvedMovement:
 def certificate(spec:dict)->dict:
     resolved=compile_movement(spec)
     payload=resolved.payload()
+    max_abs_period_error=max(
+        (abs(d.period_error_s_per_cycle) for d in resolved.displays),
+        default=0.0,
+    )
     return {
         "compiler":"TOKYO",
-        "version":"0.2.0",
+        "version":"0.3.0",
         "resolved":payload,
+        "metrics":{
+            "display_count":len(resolved.displays),
+            "max_abs_period_error_s_per_cycle":max_abs_period_error,
+        },
         "resolved_sha256":resolved.hash(),
     }
