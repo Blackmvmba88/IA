@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BPME Remontoire Research Contract",
+  "type": "object",
+  "required": ["id", "status", "recharge_period_s", "energy_store"],
+  "properties": {
+    "id": {"type": "string"},
+    "status": {"enum": ["simulation-only", "cad-only", "prototype-approved"]},
+    "recharge_period_s": {"type": "number", "exclusiveMinimum": 0},
+    "energy_store": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {"enum": ["spring", "gravity", "elastic-blade", "other"]},
+        "capacity_uj": {"type": ["number", "null"], "minimum": 0}
+      }
+    },
+    "output_torque_unm": {"type": ["number", "null"], "minimum": 0},
+    "notes": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
