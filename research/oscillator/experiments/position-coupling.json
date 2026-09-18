@@ -1,0 +1,30 @@
+{
+  "id": "position-coupling-001",
+  "status": "simulation-only",
+  "oscillator": {
+    "frequency_hz": 4.0,
+    "initial_amplitude_rad": 0.4
+  },
+  "perturbation": {
+    "kind": "center-of-mass-offset-gravity-torque",
+    "torque_scale_nm": 1e-10
+  },
+  "poses": [
+    [1.0, 0.0, 0.0],
+    [-1.0, 0.0, 0.0],
+    [0.0, 1.0, 0.0],
+    [0.0, -1.0, 0.0],
+    [0.0, 0.0, 1.0],
+    [0.0, 0.0, -1.0]
+  ],
+  "comparisons": [
+    "static-regulator",
+    "classical-60s",
+    "inclined-25deg-24s",
+    "biaxial-60-137"
+  ],
+  "notes": [
+    "Torque scale is synthetic and exists to exercise the coupling model.",
+    "Estimated rate error is a simulation proxy, not a chronometer claim."
+  ]
+}
