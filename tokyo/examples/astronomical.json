@@ -3,10 +3,11 @@
   "oscillator":{"frequency_hz":4.0},
   "displays":[
     {"id":"seconds","period_s":60.0,"radius_mm":14.0,"z_mm":0.0,"kind":"hand"},
-    {"id":"minutes","period_s":3600.0,"radius_mm":13.0,"z_mm":0.4,"kind":"hand"},
-    {"id":"hours","period_s":43200.0,"radius_mm":9.0,"z_mm":0.8,"kind":"hand"},
-    {"id":"moon","period_s":2551442.8788992,"radius_mm":7.0,"z_mm":1.8,"kind":"orbital"},
-    {"id":"year","period_s":31556925.19008,"radius_mm":11.0,"z_mm":2.2,"kind":"orbital"},
-    {"id":"tourbillon-cage","period_s":60.0,"radius_mm":8.0,"z_mm":-1.0,"kind":"cage"}
+    {"id":"minutes","source_id":"seconds","period_s":3600.0,"radius_mm":13.0,"z_mm":0.4,"kind":"hand"},
+    {"id":"hours","source_id":"minutes","period_s":43200.0,"radius_mm":9.0,"z_mm":0.8,"kind":"hand"},
+    {"id":"day","source_id":"hours","period_s":86400.0,"radius_mm":null,"z_mm":1.2,"kind":"internal"},
+    {"id":"moon","source_id":"day","period_s":2551442.8788992,"radius_mm":7.0,"z_mm":1.8,"kind":"orbital"},
+    {"id":"year","source_id":"moon","period_s":31556925.19008,"radius_mm":11.0,"z_mm":2.2,"kind":"orbital"},
+    {"id":"tourbillon-cage","source_id":"seconds","period_s":60.0,"radius_mm":8.0,"z_mm":-1.0,"kind":"cage"}
   ]
 }
