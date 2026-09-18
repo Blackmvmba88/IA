@@ -1,0 +1,41 @@
+{
+  "id": "genesis-300",
+  "revision": "0.1.0",
+  "units": "mm",
+  "parts": [
+    {
+      "id": "gear-driver-18t",
+      "kind": "gear",
+      "nominal": {
+        "teeth": 18,
+        "module": 1.0,
+        "pressure_angle_deg": 20.0,
+        "thickness": 5.0,
+        "bore_diameter": 5.0
+      },
+      "process": {
+        "material": "prototype-unspecified",
+        "machine_class": "mill-or-router",
+        "release_state": "plan-only"
+      },
+      "compensation": {}
+    },
+    {
+      "id": "gear-driven-72t",
+      "kind": "gear",
+      "nominal": {
+        "teeth": 72,
+        "module": 1.0,
+        "pressure_angle_deg": 20.0,
+        "thickness": 5.0,
+        "bore_diameter": 8.0
+      },
+      "process": {
+        "material": "prototype-unspecified",
+        "machine_class": "mill-or-router",
+        "release_state": "plan-only"
+      },
+      "compensation": {}
+    }
+  ]
+}
