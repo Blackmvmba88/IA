@@ -1,0 +1,21 @@
+{
+  "id": "h1-duffing-sweep-001",
+  "status": "simulation-only",
+  "model": "tau=-(k1*theta+k3*theta^3)",
+  "target_small_signal_frequency_hz": 4.0,
+  "balance_inertia_kg_m2": 1e-9,
+  "k3_over_k1_cases": [-0.05, 0.0, 0.05],
+  "amplitudes_rad": [0.1, 0.2, 0.4, 0.6, 0.8],
+  "duration_s": 5.0,
+  "dt_s": 0.00025,
+  "observables": [
+    "frequency_hz",
+    "relative_rate_s_per_day",
+    "frequency_spread"
+  ],
+  "notes": [
+    "Coefficients are synthetic research values.",
+    "The sweep exists to expose amplitude-dependent frequency behavior.",
+    "No production hairspring geometry is implied."
+  ]
+}
