@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://blackmamba.local/bpme/mechanism.schema.json",
+  "title": "BPME Mechanism Genome",
+  "type": "object",
+  "required": ["id", "revision", "units", "parts"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "revision": {"type": "string", "minLength": 1},
+    "units": {"const": "mm"},
+    "parts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "nominal"],
+        "properties": {
+          "id": {"type": "string"},
+          "kind": {"enum": ["gear", "shaft", "plate", "spacer", "bearing", "other"]},
+          "nominal": {"type": "object"},
+          "process": {"type": "object"},
+          "compensation": {"type": "object"}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
