@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BPME Inspection Evidence",
+  "type": "object",
+  "required": ["part_id", "revision", "measurements"],
+  "properties": {
+    "part_id": {"type": "string"},
+    "revision": {"type": "string"},
+    "measurements": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["feature", "nominal", "measured", "unit"],
+        "properties": {
+          "feature": {"type": "string"},
+          "nominal": {"type": "number"},
+          "measured": {"type": "number"},
+          "unit": {"type": "string"},
+          "method": {"type": "string"},
+          "uncertainty": {"type": "number", "minimum": 0}
+        }
+      }
+    }
+  }
+}
