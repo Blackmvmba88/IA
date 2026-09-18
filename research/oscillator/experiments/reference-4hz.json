@@ -1,0 +1,24 @@
+{
+  "id": "osc-reference-4hz",
+  "status": "simulation-only",
+  "target_frequency_hz": 4.0,
+  "target_beats_per_hour": 28800,
+  "balance": {
+    "inertia_kg_m2": 1e-9
+  },
+  "hairspring": {
+    "effective_stiffness_nm_per_rad": 6.316546816697189e-7
+  },
+  "loss": {
+    "damping_nms_per_rad": 2e-10
+  },
+  "escapement": {
+    "kind": "event-impulse",
+    "impulse_energy_j": 2e-10,
+    "unlock_angle_rad": 0.08
+  },
+  "notes": [
+    "Values are research placeholders chosen to make a self-consistent reduced-order oscillator.",
+    "They are not dimensions or energy values copied from a production movement."
+  ]
+}
