@@ -21,10 +21,11 @@
         "required":["id","period_s"],
         "properties":{
           "id":{"type":"string","minLength":1},
+          "source_id":{"type":["string","null"]},
           "period_s":{"type":"number","exclusiveMinimum":0},
           "radius_mm":{"type":["number","null"],"exclusiveMinimum":0},
           "z_mm":{"type":["number","null"]},
-          "kind":{"enum":["hand","disk","orbital","cage","other"]}
+          "kind":{"enum":["hand","disk","orbital","cage","internal","other"]}
         },
         "additionalProperties":false
       }
