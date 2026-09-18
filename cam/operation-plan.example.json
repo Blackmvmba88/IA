@@ -1,0 +1,13 @@
+{
+  "part_id": "gear-driver-18t",
+  "release_state": "plan-only",
+  "stock": {"shape": "disk", "dimensions_mm": [24.0, 6.0]},
+  "operations": [
+    {"id": "setup-1", "kind": "setup"},
+    {"id": "rough-profile", "kind": "profile", "machine_neutral": true},
+    {"id": "bore", "kind": "bore", "machine_neutral": true},
+    {"id": "gear-form", "kind": "gear-generation", "machine_neutral": true},
+    {"id": "inspect", "kind": "inspection-gate"}
+  ],
+  "gcode_authorized": false
+}
