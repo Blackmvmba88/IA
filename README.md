@@ -14,16 +14,34 @@ Genesis-300 is the reference mechanism used to validate the pipeline before mini
 
 ## Horology Research Lab
 
-BPME also contains a research layer for high-watchmaking regulator and energy architectures.
+BPME contains a research layer for regulating organs, rotating complications and energy conditioning.
 
 Current tracks:
 
 - `research/tourbillon/` — classical, inclined, flying and multi-axis rotating regulators
+- `research/oscillator/` — balance + hairspring dynamics, escapement impulses and positional coupling
+- `research/hairspring/` — nonlinear stiffness and future geometry/FEA calibration
 - `research/carrousel/` — dual-power-path rotating regulator architecture
-- `research/constant-force/` — remontoire and constant-force energy conditioning
+- `research/constant_force/` — remontoire and constant-force periodic coupling
 - `research/tourbillon/experiments/` — machine-readable candidate topologies
 
 Research models are deliberately reduced-order. They compare topology, kinematics, energy and periodic coupling; they do not claim chronometer-grade prediction until calibrated with real measurement data.
+
+## Current integrated research loop
+
+The first integrated model now connects:
+
+**cage topology → balance-axis orientation → carried center-of-mass offset → gravity torque → balance/hairspring oscillator → escapement impulses → simulated zero crossings → rate-error proxy**
+
+The reference oscillator is configured at 4 Hz / 28,800 beats per hour for regression testing.
+
+Run the six-position research matrix with:
+
+```bash
+python -m research.oscillator.run_position_matrix
+```
+
+The matrix compares the same synthetic perturbation across a static regulator, a classical 60 s cage, an inclined 25° / 24 s topology, and a biaxial 60/137 s candidate.
 
 ## First research candidate
 
@@ -32,6 +50,7 @@ Research models are deliberately reduced-order. They compare topology, kinematic
 - spherical orientation coverage
 - cage-period interactions
 - energy-cost proxies
+- positional oscillator coupling
 - future CAD-derived inertia
 
 It is not a production movement or a copy of an existing caliber.
