@@ -1,0 +1,22 @@
+{
+  "id": "mamba-t01-biaxial",
+  "status": "simulation-only",
+  "axes": [
+    {"id": "inner", "direction": [1.0, 0.0, 0.0], "period_s": 60.0},
+    {"id": "outer", "direction": [0.0, 1.0, 0.0], "period_s": 137.0}
+  ],
+  "oscillator": {
+    "frequency_hz": 2.5,
+    "target_amplitude_deg": null
+  },
+  "energy_model": {
+    "cage_inertia_kg_m2": 1e-9,
+    "friction_torque_nm": 2e-8,
+    "constant_force": false
+  },
+  "notes": [
+    "Research candidate, not a production movement.",
+    "The 60/137 s period pair is intentionally non-identical and relatively prime at integer-second scale to delay exact orientation repetition.",
+    "Gearability, torque budget and CAD envelope are not yet validated."
+  ]
+}
