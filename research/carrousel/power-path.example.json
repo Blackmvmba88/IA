@@ -1,0 +1,26 @@
+{
+  "id": "carrousel-power-path-001",
+  "status": "simulation-only",
+  "source": "barrel",
+  "branches": [
+    {
+      "id": "escapement-train",
+      "destination": "escapement",
+      "efficiency": null,
+      "ratio": null
+    },
+    {
+      "id": "cage-train",
+      "destination": "cage",
+      "efficiency": null,
+      "ratio": null
+    }
+  ],
+  "observables": [
+    "input_torque",
+    "escapement_torque",
+    "cage_torque",
+    "cage_period",
+    "balance_amplitude"
+  ]
+}
