@@ -1,0 +1,26 @@
+{
+  "id":"mamba-time-synth-001",
+  "status":"simulation-only",
+  "oscillator":{
+    "frequency_hz":4.0,
+    "beats_per_hour":28800
+  },
+  "displays":[
+    {"id":"seconds","period_s":60.0},
+    {"id":"minutes","period_s":3600.0},
+    {"id":"hours","period_s":43200.0},
+    {"id":"moon","period_days":29.530588853},
+    {"id":"year","period_days":365.2421897}
+  ],
+  "gear_geometry":{
+    "module_mm":0.20,
+    "pressure_angle_deg":20.0
+  },
+  "coordinate_frames":[
+    "mechanism",
+    "part",
+    "setup",
+    "machine"
+  ],
+  "rule":"time is represented as transported phase; every physical wheel is a phase transformer"
+}
